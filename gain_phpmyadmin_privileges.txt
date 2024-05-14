@@ -1,0 +1,29 @@
+To create database and gain privileges in phpymyadmin
+
+Method 1 (using Debian superuser):
+1) Open Ubuntu Terminal
+2) Type command 'sudo nano /etc/mysql/debian.cnf'
+3) Login to PHPmyAdmin using the username and password
+
+Method 2 (Creating new user and granting privileges to it)
+1) Open Ubuntu Terminal
+2) Type command 'sudo mysql -u root -p'
+3) Just press ENTER if asked for password since root user has no password
+4) Type command in mysql> 
+
+CREATE USER 'yourusername'@'localhost' IDENTIFIED BY 'yourpassword' 
+//make sure to change yourusername and yourpassword with your desired username and password
+
+5) Type command in mysql>
+
+GRANT ALL PRIVILEGES ON *.* TO 'yourusername'@'localhost' WITH GRANT OPTION;
+
+6) Type command in mysql>
+
+FLUSH PRIVILEGES;
+
+7) Type command in mysql>
+
+exit
+
+8) Login to PHPmyAdmin using your new username and password
